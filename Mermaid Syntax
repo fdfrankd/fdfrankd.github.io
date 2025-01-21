@@ -5,9 +5,17 @@ flowchart td
     C -->|Two| E[dog bone]
     C -->|Three| F[dog leash]
     C -->|four| G[select all] --> H(go to cashier)
-    H --> I(talk with the mister) -->|paid| J(leave)
+    H --> I(talk with the mister cashier) -->|paid| J(leave)
     J -->K(get in the car)
     K -->L(go to home)
     M{talk with mother} -->|give the presents| N(play with the dog and think what gifts giver first)
     N -->|select| O(dog bone)
     P[dog]--> Q{she is happy}
+
+
+
+
+Me: i was celebreiting chrismast and i decided buy many gifts to may new dog
+Mother: She love dogs so she decided to adopt one for christmast 
+Dog: His name is Bella and she is a doberman
+Mister cashier: A old friend and Veteran from the army

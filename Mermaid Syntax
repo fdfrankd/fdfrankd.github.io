@@ -1,0 +1,13 @@
+flowchart td
+    A[Christmas] -->|Get money| B(Go to pet store talk with the people about a gift for my dog)
+    B --> C{Let me think}
+    C -->|One| D[dog bed]
+    C -->|Two| E[dog bone]
+    C -->|Three| F[dog leash]
+    C -->|four| G[select all] --> H(go to cashier)
+    H --> I(talk with the mister) -->|paid| J(leave)
+    J -->K(get in the car)
+    K -->L(go to home)
+    M{talk with mother} -->|give the presents| N(play with the dog and think what gifts giver first)
+    N -->|select| O(dog bone)
+    P[dog]--> Q{she is happy}

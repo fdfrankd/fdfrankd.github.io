@@ -8,7 +8,7 @@ flowchart td
     H --> I(talk with the mister cashier) -->|paid| J(leave)
     J -->K(get in the car)
     K -->L(go to home)
-    M{talk with mother} -->|give the presents| N(play with the dog and think what gifts giver first)
+    M{talk with my mother} -->|give the presents| N(play with the dog and think what gifts giver first)
     N -->|select| O(dog bone)
     P[dog]--> Q{she is happy}
 

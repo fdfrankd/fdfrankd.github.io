@@ -1,5 +1,5 @@
 flowchart td
-    A[Christmas] -->|Get money| B(Go to pet store talk with the people about a gift for my dog)
+    A[me in Christmas] -->|Get money| B(Go to pet store talk with the people about a gift for my dog)
     B --> C{Let me think}
     C -->|One| D[dog bed]
     C -->|Two| E[dog bone]
@@ -15,7 +15,7 @@ flowchart td
 
 
 
-Me: i was celebreiting chrismast and i decided buy many gifts to may new dog
-Mother: She love dogs so she decided to adopt one for christmast 
-Dog: His name is Bella and she is a doberman
-Mister cashier: A old friend and Veteran from the army
+Me: I was celebreiting chrismast and i decided buy many gifts to may new dog.
+Mother: She love dogs so she decided to adopt one for christmast. 
+Dog: Her name is Bella and she is a doberman.
+Mister cashier: A old friend and Veteran from the army.

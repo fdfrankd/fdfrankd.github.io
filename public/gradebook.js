@@ -8,7 +8,7 @@ function calculateFinalGrade(grades) {
     return 0;
 }
 
-function addStudentRow(name, grades) {
-    console.log("addStudentRow called with:", name, grades);
+function addStudentRow(Frank, grades) {
+    console.log("addStudentRow called with:", Frank, grades);
     // Placeholder for row-adding logic
 }

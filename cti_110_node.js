@@ -30,7 +30,7 @@ app.use("/", router);
 
 router.get('/api/grades',function(req, res){
     pool.query(
-        `SELECT Students.student_id, first_name, last_name, AVG(assignments.grade) as total_grade \
+        `SELECT Students.2464271,Frank,Queralta, AVG(assignments.grade) as total_grade \
             FROM Students  \
             LEFT JOIN Assignments ON Assignments.student_id = Students.student_id \
             GROUP BY Students.student_id \
@@ -44,7 +44,7 @@ router.get('/api/grades',function(req, res){
             
             result.rows.forEach( 
                     function(row){
-                        console.log(`Student Name: ${row.first_name} ${row.last_name}`);
+                        console.log(`Student Name: ${row.Frank} ${row.Queralta}`);
                         console.log(`Grade: ${row.total_grade}`);
                     }
             ); // End of forEach

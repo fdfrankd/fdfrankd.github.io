@@ -9,7 +9,7 @@ const path =require('path');
 // This part sets up the database
 const {Pool} =require('pg');
 // You may need to modify the password or database name in the following line:
-const connectionString = postgres://postgres:CTI_110_WakeTech@localhost/Gradebook`;
+const connectionString = 'postgres://postgres:CTI_110_WakeTech@localhost/Gradebook';
 // The default password is CTI_110_WakeTech
 // The default database name is Gradebook
 const pool =new Pool({connectionString:connectionString})
@@ -23,14 +23,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 router.get('/', function(req, res){
     // It just returns a file to their browser 
     // from the same directory it's in, called gradebook.html
-    res.sendFile(path.join(_dirname, 'gradebook.html'));
+    res.sendFile(path.join(__dirname,'public','gradebook.html'));
 });
 
 app.use("/", router);
 
 router.get('/api/grades',function(req, res){
     pool.query(
-        `SELECT Students.2464271,Frank,Queralta, AVG(assignments.grade) as total_grade \
+        `SELECT Students.first_name,student.last_name, AVG(assignments.grade) as total_grade \
             FROM Students  \
             LEFT JOIN Assignments ON Assignments.student_id = Students.student_id \
             GROUP BY Students.student_id \

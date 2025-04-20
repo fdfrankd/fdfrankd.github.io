@@ -25,11 +25,12 @@ function addStudentRow(name, grades) {
         row.appendChild(gradeCell);
 
         table.appendChild(row);
+    });
     }
     function populateGradebook(data) {
         console.log("Populating gradebook with:",data);
         data.forEach(student => {
-            const name = ${student.last_name}, ${student.first_name};
+            const name = `${student.last_name}, ${student.first_name}`;
             const grades = [
                 student.assignment_1,
                 student.assignment_2,

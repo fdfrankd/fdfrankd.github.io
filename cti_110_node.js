@@ -1,4 +1,3 @@
-
 // This section loads modules.  It loads the Express server and stores
 // it in "express", then creates a application, a router, and a path handler
 const express =require('express');
@@ -29,6 +28,7 @@ router.get('/', function(req, res){
 app.use("/", router);
 
 router.get('/api/grades',function(req, res){
+    console.log("GET /api/grades called")
     pool.query(
         `SELECT Students.first_name,students.last_name, AVG(assignments.grade) as total_grade \
             FROM Students  \
@@ -37,14 +37,17 @@ router.get('/api/grades',function(req, res){
             ORDER BY total_grade DESC`,
         [],
         function( err, result){
-            if(err)
-            {
-                console.error(err);
+            if(err) { 
+
+           console.error("Database query failed:",err);
+           return res.status(500).send("Database query failed");
+
+                
             }
             
             result.rows.forEach( 
                     function(row){
-                        console.log(`Student Name: ${row.Frank} ${row.Queralta}`);
+                        console.log(`Student Name: ${row.first_name} ${row.last_name}`);
                         console.log(`Grade: ${row.total_grade}`);
                     }
             ); // End of forEach

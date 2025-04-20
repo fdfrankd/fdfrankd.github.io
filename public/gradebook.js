@@ -43,7 +43,7 @@ function addStudentRow(name, grades) {
     function fetchGradeData() {
         console.log("Fetching grade data...");
         const xhr =new XMLHttpRequest();
-        xhr.open("GET","http://localhost:3000/api/grades",true);
+        xhr.open("GET","/api/grades",true);
 
         xhr.onreadystatechange =function() {
             if (xhr.readyState ===XMLHttpRequest.DONE) {

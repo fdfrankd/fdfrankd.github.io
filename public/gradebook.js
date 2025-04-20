@@ -59,4 +59,4 @@ function addStudentRow(name, grades) {
     }
     window.onload =fetchGradeData;
     // Placeholder for row-adding logic
-}
+

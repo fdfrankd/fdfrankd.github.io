@@ -1,3 +1,4 @@
+
 // This section loads modules.  It loads the Express server and stores
 // it in "express", then creates a application, a router, and a path handler
 const express =require('express');
@@ -29,32 +30,28 @@ app.use("/", router);
 
 router.get('/api/grades',function(req, res){
     console.log("GET /api/grades called")
-    pool.query(
-        `SELECT Students.first_name,students.last_name, AVG(assignments.grade) as total_grade \
-            FROM Students  \
-            LEFT JOIN Assignments ON Assignments.student_id = Students.student_id \
-            GROUP BY Students.student_id \
-            ORDER BY total_grade DESC`,
-        [],
-        function( err, result){
-            if(err) { 
+   pool.query(
+  `SELECT Students.first_name, Students.last_name,
+          AVG(Assignments.assignment_1) AS assignment_1,
+          AVG(Assignments.assignment_2) AS assignment_2,
+          AVG(Assignments.assignment_3) AS assignment_3,
+          AVG(Assignments.assignment_4) AS assignment_4,
+          AVG(Assignments.grade) AS total_grade
+   FROM Students
+   LEFT JOIN Assignments ON Assignments.student_id = Students.student_id
+   GROUP BY Students.student_id
+   ORDER BY total_grade DESC`,
+  [],
+  function(err, result) {
+    if (err) {
+      console.error("Database query failed:", err);
+      return res.status(500).send("Database query failed");
+    }
 
-           console.error("Database query failed:",err);
-           return res.status(500).send("Database query failed");
+    res.status(200).json(result.rows);
+  }
+);
 
-                
-            }
-            
-            result.rows.forEach( 
-                    function(row){
-                        console.log(`Student Name: ${row.first_name} ${row.last_name}`);
-                        console.log(`Grade: ${row.total_grade}`);
-                    }
-            ); // End of forEach
-            
-            res.status(200).json(result.rows);
-        }
-    );
 });
 
 let server =app.listen(3000, function(){

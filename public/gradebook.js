@@ -36,6 +36,7 @@ function addStudentRow(name, grades) {
                 student.assignment_2,
                 student.assignment_3,
                 student.assignment_4,
+                student.total_grade
                 ];
             addStudentRow(name, grades);
         });
